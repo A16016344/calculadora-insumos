@@ -13,7 +13,10 @@
 // limitations under the License.
 
 var cacheName = 'Offline';
-var filesToCache = [index.html,css/css.css];
+var filesToCache = [
+	'images/logo.png',
+	'favicon.ico'
+	];
 
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
