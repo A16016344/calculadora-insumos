@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora de Insumos</title>
+		<link rel="stylesheet" type="text/css" href="../css/css.css">
+		<!-- TODO add manifest here -->
+		<link rel="manifest" href="/manifest.json">
+		<!-- Add to home screen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="red">
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__title">Calculadora de Insumos</h1>
+		</header>
+		<section id="datos">
+			<form>
+				<fieldset>
+					<legend class="cap 324 1404 10354">Capuchino canela</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 10356">Capuchino vainilla</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 10357">Capuchino regular</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 17759">Capuchino moka</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1215 23182">Capuchino splenda</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1215 23183">Capuchino sin azúcar</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 23278">Capuchino latte</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 27147">Chocolate Hershey's</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 31339">Chocolate Original</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 33511">Capuchino Resses</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 160 750 35055">Carlos V</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 228 750 37052">Capuchino La Lechera</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<input class="button" onclick="calcular();" type="button" value="Calcular">
+			</form>
+		</section>
+		
+		<section id="resultados" class="hidden">
+		</section>
+		<script>
+			function calcular(){
+				var HTML = "";
+				cap = document.querySelectorAll('.cap');
+				bolsas = document.querySelectorAll('.bolsas');
+				onzas = document.querySelectorAll('.onzas');
+				gramos = document.querySelectorAll('.gramos');
+				console.log(cap)
+				console.log(cap[0].innerText + cap[0].classList[1] + bolsas[0].value + onzas[0].value + gramos[0].value);
+				for (i=0;i < cap.length; i++){
+					console.log(bolsas);
+					if (bolsas[i].value == ""){bolsas[i].value = 0;}
+					if (onzas[i].value == ""){onzas[i].value = 0;}
+					if (gramos[i].value == ""){gramos[i].value = 0;}
+					oz_bolsa = parseInt(cap[i].classList[1]);
+					g_bolsa = parseInt(cap[i].classList[2]);
+					oz_g =  oz_bolsa / g_bolsa;
+					onzasTotales = parseInt(bolsas[i].value)*oz_bolsa + parseInt(onzas[i].value) + parseInt(gramos[i].value)*oz_g;
+					console.log(onzasTotales)
+					if (onzasTotales != 0){
+						HTML = HTML + "<fieldset><legend>"+cap[i].innerText+"</legend><b>"+cap[i].classList[3]+":</b> "+parseInt(onzasTotales)+" oz</fieldset>";
+					}
+				}
+				document.getElementById("resultados").innerHTML = "<form>" + HTML + "<input class='button' type='button' onclick='mostrar();' value='Modificar'><input class='button' type='button' onclick='location.reload();' value='Reiniciar'></form>";
+				document.getElementById("resultados").classList.remove('hidden');
+				document.getElementById("datos").classList.add('hidden');
+			}
+			function mostrar(){
+				document.getElementById("datos").classList.remove('hidden');
+				document.getElementById("resultados").classList.add('hidden');
+			}
+		</script>
+	</body>
+</html>
