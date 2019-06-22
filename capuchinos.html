@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora de Insumos</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link href="fontawesome/css/all.css" rel="stylesheet">
+		<!-- TODO add manifest here -->
+		<link rel="manifest" href="manifest.json">
+		<!-- Add to home screen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="red">
+	</head>
+	<body>
+		<header class="header">
+			<span class="header__button" ><a href="index.html" class="fas fa-arrow-left"></a></span>
+			<h1 class="header__title">Máquina de Capuchino</h1>
+		</header>
+		<section id="datos">
+			<form>
+				<fieldset>
+					<legend class="cap 324 1350 10204">Chocolate Original</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 10354">Capuchino Canela</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 10356">Capuchino Vainilla</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 10357">Capuchino Regular</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 17759">Capuchino Moka</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1215 23182">Capuchino Splenda</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1215 23183">Capuchino Sin Azúcar</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 23278">Capuchino Latte</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1404 27147">Chocolate Hershey's</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 0 1 30559 hidden">Capuchino Moka Kisses</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 164 750 31339">Chocolate Abuelita</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 33511">Capuchino Resses</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 160 750 35055">Chocolate Carlos V</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 228 750 37052">Capuchino La Lechera</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<fieldset>
+					<legend class="cap 324 1350 38258">Chai Latte</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>
+				<input class="button" onclick="calcular();" type="button" value="Calcular"><input class='button' type='button' onclick='recargar();' value='Reiniciar'>
+			</form>
+		</section>
+		
+		<section id="resultados" class="hidden">
+		</section>
+		<script src="js/js.js"></script>
+	</body>
+</html>

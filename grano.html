@@ -19,21 +19,16 @@
 	</head>
 	<body>
 		<header class="header">
-			<h1 class="header__title">Calculadora de Insumos</h1>
+			<span class="header__button" ><a href="index.html" class="fas fa-arrow-left"></a></span>
+			<h1 class="header__title">Máquina de Grano</h1>
 		</header>
 		<section id="datos">
-			<a href="capuchinos.html" class="boton">
-				<div class="icono"><img src="images/no-image.png" id="capuchino"> </img></div>
-				<div class="texto">Máquina de Capuchino</div>
-			</a>
-			<a href="frapes.html" class="boton">
-				<div class="icono"><img src="images/no-image.png" id="frappe"> </img></span></div>
-				<div class="texto">Máquina de Frappé</div>
-			</a>
-			<a href="grano.html" class="boton">
-				<div class="icono"><img src="images/no-image.png" id="grano"> </img></span></div>
-				<div class="texto">Máquina de Grano</div>
-			</a>
+			<form>
+				<fieldset>
+					<legend class="cap 788 1150 7456">Café Americano</legend>
+						<input type="number" class="bolsas" placeholder="bolsas" > <input type="number" class="onzas" placeholder="onzas"> <input type="number" class="gramos" placeholder="gramos"></input>
+				</fieldset>				<input class="button" onclick="calcular();" type="button" value="Calcular"><input class='button' type='button' onclick='recargar();' value='Reiniciar'>
+			</form>
 		</section>
 		
 		<section id="resultados" class="hidden">
