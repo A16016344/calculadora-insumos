@@ -205,17 +205,17 @@ padding: 0 0 0 16px;  }
 	
 	#capuchino {
 		width: 50px;
-		background: url('/images/iconos_cafe.png') 0 -47px;
+		background: url('images/iconos_cafe.png') 0 -47px;
 	}
 	
 	#frappe {
 		width: 50px;
-		background: url('/images/iconos_cafe.png') -50px -47px;
+		background: url('images/iconos_cafe.png') -50px -47px;
 	}
 	
 	#grano {
 		width: 50px;
-		background: url('/images/iconos_cafe.png') -50px 0;
+		background: url('images/iconos_cafe.png') -50px 0;
 			}
 	
  @media screen and (min-width: 800px) {
