@@ -14,8 +14,35 @@
 
 var cacheName = 'Offline';
 var filesToCache = [
+	'css/css.css',
+	'fontawesome/css/all.css',
+	'fontawesome/webfonts/fa-brands-400.eot',
+	'fontawesome/webfonts/fa-brands-400.woff',
+	'fontawesome/webfonts/fa-brands-400.ttf',
+	'fontawesome/webfonts/fa-regular-400.eot',
+	'fontawesome/webfonts/fa-regular-400.woff',
+	'fontawesome/webfonts/fa-regular-400.ttf',
+	'fontawesome/webfonts/fa-solid-900.eot',
+	'fontawesome/webfonts/fa-solid-900.woff',
+	'fontawesome/webfonts/fa-solid-900.ttf',
 	'images/logo.png',
-	'favicon.ico'
+	'images/iconos_cafe.png',
+	'images/no-image.png',
+	'images/icons/icon-32x32.png',
+	'images/icons/icon-128x128.png',
+	'images/icons/icon-144x144.png',
+	'images/icons/icon-152x152.png',
+	'images/icons/icon-192x192.png',
+	'images/icons/icon-256x256.png',
+	'js/js.js',
+	'activacion.html',
+	'ajustes.html',
+	'capuchinos.html',
+	'favicon.ico',
+	'frapes.html',
+	'grano.html',
+	'index.html',
+	'manifest.json'
 	];
 
 self.addEventListener('install', function(e) {

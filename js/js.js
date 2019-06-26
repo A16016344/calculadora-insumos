@@ -19,6 +19,20 @@
 				document.getElementById("resultados").innerHTML = "<form>" + HTML + "<input class='button' type='button' onclick='mostrar();' value='Modificar'><input class='button' type='button' onclick='recargar();' value='Reiniciar'></form>";
 				document.getElementById("resultados").classList.remove('hidden');
 				document.getElementById("datos").classList.add('hidden');
+				activado = localStorage.getItem("activado");
+				if (activado != "true"){
+					sumador = localStorage.getItem("sumador");
+					if (sumador == "NaN"){localStorage.setItem("sumador",0)}
+					localStorage.setItem("sumador",parseInt(sumador)+1);
+					if (sumador == "NaN"){localStorage.setItem("sumador",0)}
+					if (sumador > 50 & sumador <= 100){
+						alert("Te quedan solo "+(100-sumador)+" clicks, ve a ajustes activación para activar tu aplicación");
+					}
+					if (sumador > 100) {
+						alert("Tu periodo de prueba a finalizado, es necesario que actives tu aplicación");
+						window.open("activacion.html",'_self');
+					}
+				}
 			}
 			function mostrar(){
 				document.getElementById("datos").classList.remove('hidden');
@@ -29,6 +43,18 @@
 				if (opcion == true) {
 					location.reload();
 				}
+			}
+			
+			function validarActivacion() {
+				activado = localStorage.getItem("activado");
+				if (activado == "true"){
+					document.getElementById("datos").classList.add('hidden');
+					document.getElementById("resultados").classList.remove('hidden');
+				}
+			}
+			
+			function activar() {
+				localStorage.setItem("activado","true")
 			}
 			
 (function() {

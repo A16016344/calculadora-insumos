@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora de Insumos</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link href="fontawesome/css/all.css" rel="stylesheet">
+		<!-- TODO add manifest here -->
+		<link rel="manifest" href="manifest.json">
+		<!-- Add to home screen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="red">
+	</head>
+	<body>
+		<header class="header">
+			<span class="header__button" ><a href="ajustes.html" class="fas fa-arrow-left"></a></span>
+			<h1 class="header__title">Activación</h1>
+		</header>
+		<section id="datos">
+			<form>
+				<fieldset>
+					<legend>Ingresa tu folio de activación:</legend>
+					<input type="number" id="folio" name="folio">
+					<input type="submit" value="Enviar" class="button">
+				</fieldset>
+			</form>
+			<h2>¿Cómo activar tu aplicación?</h2>
+			<h3>¿Dónde pagar?</h3>
+			<p>Paga en oxxo depositando <b>$99 MXN</b> a la tarjeta BBVA Bancomer <b>4152 3134 0565 0891</b> o por medio de una ransferencia via SPEI. Conserva tu comprobante, en el se encuentra el folio de la operación, el cual tendrás que enviar para generar tu llave de acceso para desbloquear la aplicación.</p>
+			<h3>¿Qué hago despues de pagar?</h3>
+			<p>Ingresa el folio de la transacción de pago, y envía el mensaje generado automaticamente por whasapp a <b>+52 999 304 2573</b> a traves del botón enviar de esta página. Es importante mandar el mensaje desde el mismo dispositivo a activar, y abrir el enlace de activación desde el mismo dispositivo ya que la clave de acceso será unica por dispositivo.</p>
+			<h3>¿En cuánto tiempo estará activa mi aplicación?</h3>
+			<p>Una vez enviado el mensaje con tu folio pueden tardar hasta 48hrs para que se te envie un enlace con tu clave de acceso, en caso que hayas realizado en deposito en Oxxo puedes mandar una foto de tu comprobante para agilizar el proceso.</p>
+			<h3>Ya pagué y ahora no se que hacer</h3>
+			<p>Puedes ponerte en contacto a traves del botón <b>Contacto</b> en los ajustes.</p>
+		</section>
+		
+		<section id="resultados" class="hidden">
+		<center>
+		<span style="color: green;" class="fas fa-7x fa-check-circle"></span><br>
+		<p>Tu producto esta activado</p>
+		</center>
+		</section>
+<script src="js/js.js"></script>
+		<script>
+
+			   function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+			acceskey = getParameterByName("acceskey");
+			folio = getParameterByName("folio");
+			folioGuardado = localStorage.getItem("folio");
+			if (acceskey != ""){
+				if (acceskey == folioGuardado*157431){
+					activar();
+					document.getElementById("datos").classList.add('hidden');
+					document.getElementById("resultados").classList.remove('hidden');
+				}
+			}
+			
+			if (folio != ""){
+				localStorage.setItem("folio",folio);
+				window.open("https://wa.me/5219993042573?text=*Folio:* "+folio);
+			}
+			
+			validarActivacion();
+					</script>
+	</body>
+</html>
