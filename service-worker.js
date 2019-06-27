@@ -14,6 +14,7 @@
 
 var cacheName = 'Offline';
 var filesToCache = [
+'.',
 	'css/css.css',
 	'fontawesome/css/all.css',
 	'fontawesome/webfonts/fa-brands-400.eot',
