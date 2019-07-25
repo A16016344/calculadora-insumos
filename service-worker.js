@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-var cacheName = 'Offline';
+var cacheName = 'Offline_0719';
 var filesToCache = [
 '.',
 	'css/css.css',
