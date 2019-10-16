@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora de Insumos</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link href="fontawesome/css/all.css" rel="stylesheet">
+		<!-- TODO add manifest here -->
+		<link rel="manifest" href="manifest.json">
+		<!-- Add to home screen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+		<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+		<meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="red">
+	</head>
+	<body>
+		<header class="header">
+			<span class="header__button" ><a href="index.html" class="fas fa-arrow-left"></a></span>
+			<h1 class="header__title">Administrativos</h1>
+		</header>
+		<section id="datos">
+			<form>
+				<fieldset>
+					<legend>Venta / Merma</legend>
+						Proyección Venta: <input type="number" class="pyn_venta" placeholder="Proyección Venta" >
+						<br>Proyección Merma: <input type="number" class="pyn_merma" placeholder="Proyección Merma">
+						<br><input class="button" type="button" onclick="venta_merma();" value="Calcular">
+				</fieldset>
+				<fieldset>
+					<legend>Meta Salchichas</legend>
+						Meta Exhibición: <input type="number" id="meta" placeholder="Meta Exhibición" >
+						<br>Vikingos Vendidos: <input type="number" id="vendidos" placeholder="Vikingos Vendidos">
+						<br>Salchichas Mermadas: <input type="number" id="mermadas" placeholder="Salchichas Mermadas">
+						<input class="button" onclick="calculo_salchichas();" type="button" value="Calcular">
+				</fieldset>
+				<input class='button' type='button' onclick='location.reload();' value='Reiniciar'>
+			</form>
+		</section>
+		
+		<section id="resultados" class="hidden">
+				<!--Aquí está el código del contador de visitas-->
+		<div id="sfcnzhmeh1rka3amfqtql8w828jbxhb8sxb"></div>
+		<script type="text/javascript" src="https://counter7.wheredoyoucomefrom.ovh/private/counter.js?c=nzhmeh1rka3amfqtql8w828jbxhb8sxb&down=async" async></script>
+		<br><a href="https://www.contadorvisitasgratis.com">contador web</a><noscript><a href="https://www.contadorvisitasgratis.com" title="contador web"><img src="https://counter7.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=nzhmeh1rka3amfqtql8w828jbxhb8sxb" border="0" title="contador web" alt="contador web"></a></noscript>
+				<!--Aquí acaba el código del contador de visitas-->
+		</section>
+		<script>
+			function venta_merma(){
+				var pyn_venta = document.querySelector(".pyn_venta").value;
+				var pyn_merma = document.querySelector(".pyn_merma").value;
+				var venta_merma = (parseFloat(pyn_merma)/parseFloat(pyn_venta))*100;
+				alert(venta_merma+"%");
+			}
+			function calculo_salchichas(){
+				var meta = parseFloat(document.querySelector("#meta").value);
+				var vendidos = parseFloat(document.querySelector("#vendidos").value);
+				var mermadas = parseFloat(document.querySelector("#mermadas").value);
+				var calculo_salchichas = ((vendidos+mermadas)/meta)*100;
+				alert (calculo_salchichas+"%");
+			}
+		</script>
+	</body>
+</html>

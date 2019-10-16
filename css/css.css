@@ -232,5 +232,9 @@ padding: 0 0 0 16px;  }
 		 top:0;
 		 right:0;
 		 box-shadow:0 0px 0px 0 rgba(0, 0, 0, 0);
-	 }
+     }
+     
+     .bg-blue {
+         background-color: #444499;
+     }
  }
