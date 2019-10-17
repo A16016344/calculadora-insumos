@@ -34,6 +34,15 @@
 				</fieldset>
 				<input class="button" onclick="calcular();" type="button" value="Calcular"><input class='button' type='button' onclick='recargar();' value='Reiniciar'>
 			</form>
+			<hr>
+			<form>
+				<fieldset>
+					<legend>Contador</legend>
+						<input id="anterior" onBlur="calculo_contador();" type="number" placeholder="Anterior">
+						<input id="actual" onBlur="calculo_contador();" type="number" placeholder="Actual">
+						<br><div id="resultado_contador" class="button">Calcular</div>
+				</fieldset>
+			</form>
 		</section>
 		
 		<section id="resultados" class="hidden">
@@ -44,5 +53,17 @@
 				<!--Aquí acaba el código del contador de visitas-->
 		</section>
 		<script src="js/js.js"></script>
+		<script>
+		function calculo_contador (){
+			var anterior = parseInt(document.querySelector("#anterior").value);
+			var actual = parseInt(document.querySelector("#actual").value);
+			var resultado_contador = document.getElementById("resultado_contador");
+			var calculo_contador = ((actual-anterior)/35);
+			if (calculo_contador == calculo_contador){
+				resultado_contador.innerHTML = calculo_contador.toFixed(3);
+				sumarContadorCalculos();
+			}
+		}
+</script>
 	</body>
 </html>

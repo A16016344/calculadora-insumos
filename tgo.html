@@ -20,22 +20,22 @@
 	<body>
 		<header class="header">
 			<span class="header__button" ><a href="index.html" class="fas fa-arrow-left"></a></span>
-			<h1 class="header__title">Administrativos</h1>
+			<h1 class="header__title">Administrativo</h1>
 		</header>
 		<section id="datos">
 			<form>
 				<fieldset>
-					<legend>Venta / Merma</legend>
+					<legend id="legend_merma">Merma</legend>
 						Proyección Venta: <input type="number" class="pyn_venta" placeholder="Proyección Venta" >
 						<br>Proyección Merma: <input type="number" class="pyn_merma" placeholder="Proyección Merma">
 						<br><input class="button" type="button" onclick="venta_merma();" value="Calcular">
 				</fieldset>
 				<fieldset>
-					<legend>Meta Salchichas</legend>
+					<legend id="legend_salchichas">Exhibición Salchichas</legend>
 						Meta Exhibición: <input type="number" id="meta" placeholder="Meta Exhibición" >
 						<br>Vikingos Vendidos: <input type="number" id="vendidos" placeholder="Vikingos Vendidos">
 						<br>Salchichas Mermadas: <input type="number" id="mermadas" placeholder="Salchichas Mermadas">
-						<input class="button" onclick="calculo_salchichas();" type="button" value="Calcular">
+						<br><input class="button" onclick="calculo_salchichas();" type="button" value="Calcular">
 				</fieldset>
 				<input class='button' type='button' onclick='location.reload();' value='Reiniciar'>
 			</form>
@@ -48,19 +48,29 @@
 		<br><a href="https://www.contadorvisitasgratis.com">contador web</a><noscript><a href="https://www.contadorvisitasgratis.com" title="contador web"><img src="https://counter7.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=nzhmeh1rka3amfqtql8w828jbxhb8sxb" border="0" title="contador web" alt="contador web"></a></noscript>
 				<!--Aquí acaba el código del contador de visitas-->
 		</section>
+		<script src="js/js.js"></script>
 		<script>
 			function venta_merma(){
+				var legend_merma = document.getElementById("legend_merma");
 				var pyn_venta = document.querySelector(".pyn_venta").value;
 				var pyn_merma = document.querySelector(".pyn_merma").value;
 				var venta_merma = (parseFloat(pyn_merma)/parseFloat(pyn_venta))*100;
-				alert(venta_merma+"%");
+				if (venta_merma == venta_merma){
+					legend_merma.innerHTML = ("Merma: <b>"+venta_merma.toFixed(3)+"%</b>");
+					sumarContadorCalculos();
+				}
+				
 			}
 			function calculo_salchichas(){
+				var legend_salchichas = document.getElementById("legend_salchichas");
 				var meta = parseFloat(document.querySelector("#meta").value);
 				var vendidos = parseFloat(document.querySelector("#vendidos").value);
 				var mermadas = parseFloat(document.querySelector("#mermadas").value);
 				var calculo_salchichas = ((vendidos+mermadas)/meta)*100;
-				alert (calculo_salchichas+"%");
+				if (calculo_salchichas == calculo_salchichas){
+					legend_salchichas.innerHTML = ("Exhibicion Salchichas: <b>" + calculo_salchichas.toFixed(3)+"%</b>");
+					sumarContadorCalculos();
+				}
 			}
 		</script>
 	</body>

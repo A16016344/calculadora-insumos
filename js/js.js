@@ -19,6 +19,20 @@
 				document.getElementById("resultados").innerHTML = "<form>" + HTML + "<input class='button' type='button' onclick='mostrar();' value='Modificar'><input class='button' type='button' onclick='recargar();' value='Reiniciar'></form>";
 				document.getElementById("resultados").classList.remove('hidden');
 				document.getElementById("datos").classList.add('hidden');
+				sumarContadorCalculos();
+			}
+			function mostrar(){
+				document.getElementById("datos").classList.remove('hidden');
+				document.getElementById("resultados").classList.add('hidden');
+			}
+			function recargar(){
+				opcion = confirm("Se borraran todos los datos. ¿Reiniciar?");
+				if (opcion == true) {
+					location.reload();
+				}
+			}
+
+			function sumarContadorCalculos(){
 				activado = localStorage.getItem("activado");
 				if (activado != "true"){
 					sumador = localStorage.getItem("sumador");
@@ -32,16 +46,6 @@
 						alert("Tu periodo de prueba a finalizado, es necesario que actives tu aplicación");
 						window.open("activacion.html",'_self');
 					}
-				}
-			}
-			function mostrar(){
-				document.getElementById("datos").classList.remove('hidden');
-				document.getElementById("resultados").classList.add('hidden');
-			}
-			function recargar(){
-				opcion = confirm("Se borraran todos los datos. ¿Reiniciar?");
-				if (opcion == true) {
-					location.reload();
 				}
 			}
 			

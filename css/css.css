@@ -217,6 +217,10 @@ padding: 0 0 0 16px;  }
 		width: 50px;
 		background: url('../images/iconos_cafe.png') -50px 0;
 			}
+
+	 .bg-blue {
+         	background-color: #444499;
+	     }
 	
  @media screen and (min-width: 800px) {
 	 section{
@@ -234,7 +238,4 @@ padding: 0 0 0 16px;  }
 		 box-shadow:0 0px 0px 0 rgba(0, 0, 0, 0);
      }
      
-     .bg-blue {
-         background-color: #444499;
-     }
  }

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-var cacheName = 'Offline_0919';
+var cacheName = 'Offline_1019';
 var filesToCache = [
 '.',
 	'css/css.css',
@@ -43,6 +43,7 @@ var filesToCache = [
 	'frapes.html',
 	'grano.html',
 	'index.html',
+	'tgo.html',
 	'manifest.json'
 	];
 
